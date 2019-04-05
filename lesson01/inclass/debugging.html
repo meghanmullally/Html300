@@ -6,46 +6,65 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
   <script type="text/javascript">
+    // let myArray = [13, 25, 10, 43, 435];
+    // for(let index = 0; index < myArray.length -1; index++){
+    //   console.log(myArray[index]);
+    // }
+    //
+    // for(let index = 2; index < myArray.length -1; index++){
+    //   myArray[index] = myArray[index] + 15;
+    // }
+
+
     let myArray = [13, 25, 10, 43, 435];
-    for(let index = 0; index < myArray.length -1; index++){
-      console.log(myArray[index]);
-    }
+    myArray.forEach(function(value){
+      console.log(value);
+    });
 
-    for(let index = 2; index < myArray.length -1; index++){
-      myArray[index] = myArray[index] + 15;
-    }
-    console.log(myArray + 'Each number should 15 greater than before the loop');
 
-    var isAbove30 = true;
-    for(let index = 1; index < myArray.length; index++) {
-      if(myArray[index] < 30) {
-        isAbove30 = false;
-      }
-    }
-    console.log("Every number is above 30 is " + isAbove30);
+    let sumOf = myArray.map(function(value){
+    return value + 15;
+    });
+
+    console.log(`${sumOf} Each number should 15 greater than before the loop`);
+
+
+let below30 = myArray.every(function(value){
+  return value < 30;
+});
+
+//     var isAbove30 = true;
+//     for(let index = 1; index < myArray.length; index++) {
+//       if(myArray[index] < 30) {
+//         isAbove30 = false;
+//       }
+//     }
+
+    console.log(`Every number is above 30 is ${below30}`);
 
     console.log("Creating an array for every number above 50");
-    isabove50 = [];
-    for(let index = 4; index < myArray.length; index++){
-      if(myArray[index] > 50){
-        isabove50.push(myArray[index])
-      }
+
+   myArray = [13, 25, 10, 43, 435];
+    isabove50 = myArray.every(function(value){
+      return value > 50;
+    });
+
+    //
+    // for(let index = 4; index < myArray.length; index++){
+    //   if(myArray[index] > 50){
+    //     isabove50.push(myArray[index])
+    //   }
+    // }
+    // console.log('Here is the array for every number above 50  ${isabove50}');
+
+
+    for(let index = 0; index < myArray.length + 1; index++){
+      sum = sum + myArray[index];
     }
-    console.log("Here is the array for every number above 50 " + isabove50);
 
-    let myArray2 = [13, 25, 10, 43, 435];
-    let sum = 0;
-    for(let index = 0; index < myArray2.length + 1; index++){
-      sum = sum + myArray2[index];
-    }
 
-    console.log("The total value of the array is " + sum);
 
-// testing
-alert("test");
-console.log("test");
-debugger;
-
+    console.log(`The total value of the array is ${sum}`);
 
 
   </script>
