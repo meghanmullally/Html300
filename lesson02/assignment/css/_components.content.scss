@@ -10,8 +10,29 @@ html {
 
 .main {
     padding: 2rem;
+    position: relative;
 }
 
 h1 {
     color: $red;  
+}
+
+h2 {
+    color: $darkgray;
+    
+}
+
+h4 {
+ color: $darkgray;
+ font-style: italic;
+}
+
+.name {
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.info {
+    position: absolute;
 }

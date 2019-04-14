@@ -4,3 +4,67 @@
 @import 'settings.responsive';
 @import 'components.content';
 
+
+.main {
+  padding: 80px;
+  position: relative;
+  background-color: $white;
+  border: 15px solid $gray;
+}
+
+h2 {
+  color: $darkgray;
+  font-weight: bold;
+}
+
+h4 {
+color: $darkgray;
+font-style: italic;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+}
+
+.name {
+  position: absolute;
+  bottom: 0;
+  left: 100px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.info {
+  position: absolute;
+  right: 200px;
+  top: 160px;
+  padding: 25px;
+  background-color: $gray;
+  width: 550px;
+  height: 300px;
+}
+
+.profile {
+  width: 200px;
+  // rounded circle img 
+  border-radius: 50%;
+  border: 8px solid $white;
+}
+
+.linkedin {
+  float: left;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  height: 35px;
+  width: 35px;
+}
+
+.p {
+  float: right;
+}
+
+.bold{
+  font-weight: bold;
+}
