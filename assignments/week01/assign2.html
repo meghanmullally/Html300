@@ -10,21 +10,25 @@
     
   // Input One: Add all the numbers in the array together
 
-$(function(){
+$(function() {
     let oneArray = [4, 9, 10, 15, 27, 30, 50, 56],
-    input_one = $('.input_one'),
-    submit = $('.sumbit'),
-    oneSum = $('.one');
+    input_one = $('#input_one'),
+    submit = $('#sumbit'),
+    resultSum = $('#one');
     // click submit
-submit.on('click', function () {
+$('#submit').on('click', function () {
   const val = input_one.val();
   const num = parseInt(val);
+  // Verify the user gave us a real number
+  if (!isNaN(num)) {
+   // Add our new number to the data array
   oneArray.push(num);
   console.log(oneArray);
   let one = oneArray.reduce((pv,cv)=> {
    return pv + (parseFloat(cv)||0);
 },0);
-  oneSum.text(one);
+resultSum.text(one);
+  }  
   });
 });
 
@@ -32,16 +36,20 @@ submit.on('click', function () {
 
 $(function(){
   let secondArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_two = $('.input_two'),
-  submit_two = $('.sumbit_two'),
-  twoSum = $('.second');
-submit.on('click', function () {
-  const val = input_two.val();
-  const num = parseInt(val);
-  secondArray.push(num);
+  input_two = $('#input_two'),
+  submit_two = $('#sumbit_two'),
+  resultSum = $('#second');
+  $('#submit').on('click', function () {
+    const val = input_two.val();
+    const num = parseInt(val);
+    // Verify the user gave us a real number
+  if (!isNaN(num)) {
+   // Add our new number to the data array
+    secondArray.push(num);
   console.log(twoArray);
-  let second = secondArray.map(x => x * 5);
-  twoSum.text(second);
+    let second = secondArray.map(x => x * 5);
+  resultSum.text(second);
+  }
   });
 });
 
@@ -49,16 +57,20 @@ submit.on('click', function () {
 
 $(function(){
   let thirdArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_three = $('.input_three'),
-  submit_three = $('.sumbit_three'),
-  ThreeSum = $('.third');
-submit.on('click', function () {
-  const val = input_three.val();
-  const num = parseInt(val);
-  thirdArray.push(num);
+  input_three = $('#input_three'),
+  submit_three = $('#sumbit_three'),
+  resultSum = $('#third');
+  $('#submit').on('click', function () {
+    const val = input_three.val();
+    const num = parseInt(val);
+    // Verify the user gave us a real number
+  if (!isNaN(num)) {
+   // Add our new number to the data array
+    thirdArray.push(num);
   console.log(thirdArray);
-  let third = thirdArray.filter(x => x > 10);
-  threeSum.text(third);
+    let third = thirdArray.filter(x => x > 10);
+  resultSum.text(third);
+  }
   });
 });
 
@@ -66,17 +78,21 @@ submit.on('click', function () {
 
 $(function(){
   let fourthArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_four = $('.input_four'),
-  submit_four = $('.submit_four'),
-  FourthSum = $('.fourth');
-  submit.on('click', function () {
-  const val = input_four.val();
-  const num = parseInt(val);
-  fourthArray.push(num);
+  input_four = $('#input_four'),
+  submit_four = $('#submit_four'),
+  resultSum = $('#fourth');
+  $('#submit').on('click', function () {
+    const val = input_four.val();
+    const num = parseInt(val);
+    // Verify the user gave us a real number
+  if (!isNaN(num)) {
+   // Add our new number to the data array
+    fourthArray.push(num);
   console.log(fourthArray);
-  let fourth = fourthArray.includes(10);
+    let fourth = fourthArray.includes(10);
   console.log(fourth);
-  fourthSum.text(fourth);
+    resultSum.text(fourth);
+  }
   });
 });
 
@@ -97,7 +113,7 @@ $(function(){
         <section>
           <h3>Please input a number</h3>
             <!-- First Input -->
-            <input type="text" class="input_one"/>
+            <input type="number" class="input_one"/>
             <!-- Submit for Input -->
             <input class="submit" type="submit"/>
             <p>Add all of the numbers in the array together: <span class="first"></span></p>
@@ -105,25 +121,25 @@ $(function(){
         <section>
           <h3>Please input a number</h3>
             <!-- Second Input -->
-            <input type="text" class="input_two"/>
+            <input type="number" class="input_two"></input>
             <!-- Submit for Input -->
-            <input class="submit_two" type="submit"/>
+            <input class="submit2" type="submit"></input>
             <p>Multiplies each number by 5: <span class="second"></span></p>
         </section>
         <section>
           <h3>Please input a number</h3>
             <!-- Third Input -->
-            <input type="text" class="input_three">
+            <input type="number" class="input_three">
             <!-- Submit for Input -->
-            <input class="submit_three" type="submit"/>
+            <input class="submit3" type="submit"></input>
             <p>Display all the numbers larger than 10: <span class="third"></span></p>
         </section>
         <section>
           <h3>Please input a number</h3>
             <!-- Fourth Input -->
-            <input type="text" class="input_four">
+            <input type="number" class="input_four">
             <!-- Submit for Input -->
-            <input class="submit_four" type="submit"/>
+            <input class="submit4" type="submit"></input>
             <p>Display True, if the number is smaller than 10: <span class="fourth"></span></p>
         </section>
 
