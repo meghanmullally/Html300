@@ -1,88 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WEEK 1 ASSIGNMENT 2</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    
-  // Input One: Add all the numbers in the array together
 
-$(function(){
-    let oneArray = [4, 9, 10, 15, 27, 30, 50, 56],
-    input_one = $('.input_one'),
-    submit = $('.sumbit'),
-    oneSum = $('.one');
-    // click submit
-submit.on('click', function () {
-  const val = input_one.val();
-  const num = parseInt(val);
-  oneArray.push(num);
-  console.log(oneArray);
-  let one = oneArray.reduce((pv,cv)=> {
-   return pv + (parseFloat(cv)||0);
-},0);
-  oneSum.text(one);
-  });
-});
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WEEK 1 ASSIGNMENT 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
 
-// Input Two: Multiplies each number by 5
+    // Input One: Add all the numbers in the array together
 
-$(function(){
-  let secondArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_two = $('.input_two'),
-  submit_two = $('.sumbit_two'),
-  twoSum = $('.second');
-submit.on('click', function () {
-  const val = input_two.val();
-  const num = parseInt(val);
-  secondArray.push(num);
-  console.log(twoArray);
-  let second = secondArray.map(x => x * 5);
-  twoSum.text(second);
-  });
-});
+    $(function () {
+      const oneArray = [4, 9, 10, 15, 27, 30, 50, 56],
+        input_one = $('.input_one'),
+        submit = $('.sumbit'),
+        resultSum = $('.sum');
+      // click submit
+      submit.on('click', function () {
+        const val = input_one.val();
+        const num = parseInt(val);
+        oneArray.push(num);
+        console.log(oneArray);
+        let one = oneArray.reduce((pv, cv) => {
+          return pv + (parseFloat(cv) || 0);
+        }, 0);
+        resultSum.text(sum);
+      });
+    });
 
-// Input Third: Display all the numbers larger than 10
+    // Input Two: Multiplies each number by 5
 
-$(function(){
-  let thirdArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_three = $('.input_three'),
-  submit_three = $('.sumbit_three'),
-  ThreeSum = $('.third');
-submit.on('click', function () {
-  const val = input_three.val();
-  const num = parseInt(val);
-  thirdArray.push(num);
-  console.log(thirdArray);
-  let third = thirdArray.filter(x => x > 10);
-  threeSum.text(third);
-  });
-});
+    $(function () {
+      const secondArray = [4, 9, 10, 15, 27, 30, 50, 56],
+        input_two = $('.input_two'),
+        submit_two = $('.sumbit_two'),
+        resultSum = $('.sum');
+      submit.on('click', function () {
+        const val = input_two.val();
+        const num = parseInt(val);
+        secondArray.push(num);
+        console.log(twoArray);
+        let second = secondArray.map(x => x * 5);
+        resultSum.text(sum);
+      });
+    });
 
-// Input Fourth: Display True, if the number is smaller than 10
+    // Input Third: Display all the numbers larger than 10
 
-$(function(){
-  let fourthArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_four = $('.input_four'),
-  submit_four = $('.submit_four'),
-  FourthSum = $('.fourth');
-  submit.on('click', function () {
-  const val = input_four.val();
-  const num = parseInt(val);
-  fourthArray.push(num);
-  console.log(fourthArray);
-  let fourth = fourthArray.includes(10);
-  console.log(fourth);
-  fourthSum.text(fourth);
-  });
-});
+    $(function () {
+      const thirdArray = [4, 9, 10, 15, 27, 30, 50, 56],
+        input_three = $('.input_three'),
+        submit_three = $('.sumbit_three'),
+        resultSum = $('.sum');
+      submit.on('click', function () {
+        const val = input_three.val();
+        const num = parseInt(val);
+        thirdArray.push(num);
+        console.log(thirdArray);
+        let third = thirdArray.filter(x => x > 10);
+        resultSum.text(sum);
+      });
+    });
 
-    </script>
-    <style>
-      *  {
+    // Input Fourth: Display True, if the number is smaller than 10
+
+    $(function () {
+      const fourthArray = [4, 9, 10, 15, 27, 30, 50, 56],
+        input_four = $('.input_four'),
+        submit_four = $('.submit_four'),
+        resultSum = $('.sum');
+      submit.on('click', function () {
+        const val = input_four.val();
+        const num = parseInt(val);
+        fourthArray.push(num);
+        console.log(fourthArray);
+        let fourth = fourthArray.includes(10);
+        console.log(fourth);
+        resultSum.text(sum);
+      });
+    });
+
+  </script>
+  <style>
+    *  {
         box-sizing: border-box;
       }
 
@@ -90,43 +91,45 @@ $(function(){
           padding: 2rem
       }
     </style>
-  </head>
-  <body>
-    <main>
-        <h1>Using ES6+ and JQuery Methods</h1>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- First Input -->
-            <input type="text" class="input_one"/>
-            <!-- Submit for Input -->
-            <input class="submit" type="submit"/>
-            <p>Add all of the numbers in the array together: <span class="first"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Second Input -->
-            <input type="text" class="input_two"/>
-            <!-- Submit for Input -->
-            <input class="submit_two" type="submit"/>
-            <p>Multiplies each number by 5: <span class="second"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Third Input -->
-            <input type="text" class="input_three">
-            <!-- Submit for Input -->
-            <input class="submit_three" type="submit"/>
-            <p>Display all the numbers larger than 10: <span class="third"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Fourth Input -->
-            <input type="text" class="input_four">
-            <!-- Submit for Input -->
-            <input class="submit_four" type="submit"/>
-            <p>Display True, if the number is smaller than 10: <span class="fourth"></span></p>
-        </section>
+</head>
 
-    </main>
-  </body>
+<body>
+  <main>
+    <h1>Using ES6+ and JQuery Methods</h1>
+    <section>
+      <h3>Please input a number</h3>
+      <!-- First Input -->
+      <input type="text" class="input_one" />
+      <!-- Submit for Input -->
+      <input class="submit" type="submit" />
+      <p class="markup">Add all of the numbers in the array together: <span class="sum"></span></p>
+    </section>
+    <section>
+      <h3>Please input a number</h3>
+      <!-- Second Input -->
+      <input type="text" class="input_two" />
+      <!-- Submit for Input -->
+      <input class="submit_two" type="submit" />
+      <p class="markup">Multiplies each number by 5: <span class="sum"></span></p>
+    </section>
+    <section>
+      <h3>Please input a number</h3>
+      <!-- Third Input -->
+      <input type="text" class="input_three">
+      <!-- Submit for Input -->
+      <input class="submit_three" type="submit" />
+      <p class="markup">Display all the numbers larger than 10: <span class="sum"></span></p>
+    </section>
+    <section>
+      <h3>Please input a number</h3>
+      <!-- Fourth Input -->
+      <input type="text" class="input_four">
+      <!-- Submit for Input -->
+      <input class="submit_four" type="submit" />
+      <p class="markup">Display True, if the number is smaller than 10: <span class="sum"></span></p>
+    </section>
+
+  </main>
+</body>
+
 </html>
