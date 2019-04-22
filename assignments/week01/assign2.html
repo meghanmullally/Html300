@@ -1,148 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>WEEK 1 ASSIGNMENT 2</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>
-    
-  // Input One: Add all the numbers in the array together
 
-$(function() {
-    let oneArray = [4, 9, 10, 15, 27, 30, 50, 56],
-    input_one = $('#input_one'),
-    submit = $('#sumbit'),
-    resultSum = $('#one');
-    // click submit
-$('#submit').on('click', function () {
-  const val = input_one.val();
-  const num = parseInt(val);
-  // Verify the user gave us a real number
-  if (!isNaN(num)) {
-   // Add our new number to the data array
-  oneArray.push(num);
-  console.log(oneArray);
-  let one = oneArray.reduce((pv,cv)=> {
-   return pv + (parseFloat(cv)||0);
-},0);
-resultSum.text(one);
-  }  
-  });
-});
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>WEEK 1 ASSIGNMENT 2</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    // Input One: Using reduce to find Total 
 
-// Input Two: Multiplies each number by 5
+    $(function () {
+      const data = [4, 9, 10, 15, 27, 30, 50, 56],
+        input = $('.input'),
+        submit = $('.submit'),
+        resultSum = $('.sum');
+      // Click event on the submit input
+      submit.on('click', function () {
+        const val = input.val();
+        const num = parseInt(val);
+        // Verify the user gave us a real number
+        if (!isNaN(num)) {
+          // Add our new number to the data array
+          data.push(num);
+          const sum = data.reduce((acc, curr) => acc + curr);
+          // Add our new total to the page
+          resultSum.text(sum);
+          // Reset the input value to nothing
+          input.val('');
+        }
+      });
+    });
 
-$(function(){
-  let secondArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_two = $('#input_two'),
-  submit_two = $('#sumbit_two'),
-  resultSum = $('#second');
-  $('#submit').on('click', function () {
-    const val = input_two.val();
-    const num = parseInt(val);
-    // Verify the user gave us a real number
-  if (!isNaN(num)) {
-   // Add our new number to the data array
-    secondArray.push(num);
-  console.log(twoArray);
-    let second = secondArray.map(x => x * 5);
-  resultSum.text(second);
-  }
-  });
-});
 
-// Input Third: Display all the numbers larger than 10
+    // Input Two: Multiplies each number by 5
 
-$(function(){
-  let thirdArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_three = $('#input_three'),
-  submit_three = $('#sumbit_three'),
-  resultSum = $('#third');
-  $('#submit').on('click', function () {
-    const val = input_three.val();
-    const num = parseInt(val);
-    // Verify the user gave us a real number
-  if (!isNaN(num)) {
-   // Add our new number to the data array
-    thirdArray.push(num);
-  console.log(thirdArray);
-    let third = thirdArray.filter(x => x > 10);
-  resultSum.text(third);
-  }
-  });
-});
+    $(function () {
+      const secondArray = [4, 9, 10, 15, 27],
+        input_two = $('.input_two'),
+        submit_two = $('.sumbit_two'),
+        resultSum = $('.sum2');
+      submit_two.on('click', function () {
+        const val = input_two.val();
+        const num = parseInt(val);
+        secondArray.push(num);
+        console.log(secondArray);
+        const sum2 = secondArray.map(x => x * 5);
+        resultSum.text(sum2);
+        input_two.val('');
+      });
+    });
 
-// Input Fourth: Display True, if the number is smaller than 10
+    // Input Third: Display all the numbers larger than 10
 
-$(function(){
-  let fourthArray = [4, 9, 10, 15, 27, 30, 50, 56],
-  input_four = $('#input_four'),
-  submit_four = $('#submit_four'),
-  resultSum = $('#fourth');
-  $('#submit').on('click', function () {
-    const val = input_four.val();
-    const num = parseInt(val);
-    // Verify the user gave us a real number
-  if (!isNaN(num)) {
-   // Add our new number to the data array
-    fourthArray.push(num);
-  console.log(fourthArray);
-    let fourth = fourthArray.includes(10);
-  console.log(fourth);
-    resultSum.text(fourth);
-  }
-  });
-});
+    $(function () {
+      const thirdArray = [4, 9, 10, 30, 50, 56],
+        input_three = $('.input_three'),
+        submit_three = $('.sumbit_three'),
+        resultSum = $('.sum3');
+      submit_three.on('click', function () {
+        const val = input_three.val();
+        const num = parseInt(val);
+        thirdArray.push(num);
+        console.log(thirdArray);
+        const sum3 = thirdArray.filter(x => x > 10);
+        resultSum.text(sum3);
+        input_three.val('');
+      });
+    });
 
-    </script>
-    <style>
-      *  {
-        box-sizing: border-box;
-      }
+    // Input Fourth: Display True, if the number is smaller than 10
 
-      main {
-          padding: 2rem
-      }
-    </style>
-  </head>
-  <body>
-    <main>
-        <h1>Using ES6+ and JQuery Methods</h1>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- First Input -->
-            <input type="number" class="input_one"/>
-            <!-- Submit for Input -->
-            <input class="submit" type="submit"/>
-            <p>Add all of the numbers in the array together: <span class="first"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Second Input -->
-            <input type="number" class="input_two"></input>
-            <!-- Submit for Input -->
-            <input class="submit2" type="submit"></input>
-            <p>Multiplies each number by 5: <span class="second"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Third Input -->
-            <input type="number" class="input_three">
-            <!-- Submit for Input -->
-            <input class="submit3" type="submit"></input>
-            <p>Display all the numbers larger than 10: <span class="third"></span></p>
-        </section>
-        <section>
-          <h3>Please input a number</h3>
-            <!-- Fourth Input -->
-            <input type="number" class="input_four">
-            <!-- Submit for Input -->
-            <input class="submit4" type="submit"></input>
-            <p>Display True, if the number is smaller than 10: <span class="fourth"></span></p>
-        </section>
+    $(function () {
+      const fourthArray = [4, 9, 10, 15, 56],
+        input_four = $('.input_four'),
+        submit_four = $('.submit_four'),
+        resultSum = $('.sum4');
+      submit_four.on('click', function () {
+        const val = input_four.val();
+        const num = parseInt(val);
+        fourthArray.push(num);
+        console.log(fourthArray);
+        const sum4 = fourthArray.includes(9);
+        console.log(sum4)
+        resultSum.text(sum4);
+      });
+    });
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
 
-    </main>
-  </body>
+    main {
+      padding: 2rem
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <h1>Using ES6+ and JQuery Methods</h1>
+    <section>
+      <h3>Please input a number</h3>
+      <section class="input-set">
+        <!-- first Input -->
+        <input type="text" class="input">
+        <!-- Submit for first Input -->
+        <input class="submit" type="submit"></input>
+        <!-- Result markup with hook for answer -->
+        <p class="markup">My total with reduce is now: <span class="sum"></span></p>
+      </section>
+      <section class="input-set">
+        <!-- Second Input -->
+        <input type="text" class="input_two">
+        <!-- Submit for Second Input -->
+        <input class="submit_two" type="submit"></input>
+        <!-- Result markup with hook for answer -->
+        <p class="markup">Multipling each number by 5: <span class="sum2"></span></p>
+      </section>
+      <section class="input-set">
+        <!-- Third Input -->
+        <input type="text" class="input_three">
+        <!-- Submit for Third Input -->
+        <input class="submit_three" type="submit"></input>
+        <!-- Result markup with hook for answer -->
+        <p class="markup">Display all the numbers larger than 10: <span class="sum3"></span></p>
+      </section>
+      <section class="input-set">
+        <!-- Fourth Input -->
+        <input type="text" class="input_four">
+        <!-- Submit for Fourth Input -->
+        <input class="submit_four" type="submit"></input>
+        <!-- Result markup with hook for answer -->
+        <p class="markup">Display True, if the number is smaller than 10: <span class="sum4"></span></p>
+      </section>
+
+  </main>
+</body>
+
 </html>
