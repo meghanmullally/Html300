@@ -1,6 +1,6 @@
 
-$(document).ready(function() {
-  const data = 
+$(function() {
+  const info = 
   [
       {
       "name": "Steve Smith",
@@ -42,8 +42,8 @@ $(document).ready(function() {
     }
     ];
 
-  let dataHTML = data.map(function(i) {
-    return data = 
+  const dataHTML = info.map(function(i){
+  const info =
    `<div class="right">
     <img class="profile" src="img/unsplash-headshot.jpg" alt="Steve Smith's profile picture">
     <div class="name">
@@ -61,7 +61,7 @@ $(document).ready(function() {
     <p class="data_LinkedinURL">${i.linkedinUrl}</p>
   </div>`;
 
-    $(".data").append(dataHTML);
+    $(".template").append(dataHTML);
 
   });
 
