@@ -8,49 +8,13 @@
 	<link rel="stylesheet" href="css/style.css" />
 	<title>Fun with Constructors!</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script type="data/data.json"></script>
 	<script type="text/javascript">
-		$(function () {
+	
+	$(function(){
 
-			const data = [
-				{
-					"name": "Steve Smith",
-					"jobTitle": "Project Manager",
-					"Company": "Front End Dev Co",
-					"Experience": "3 years",
-					"School": "UW",
-					"Major": "Marketing",
-					"Email": "steve@fedc.com",
-					"LinkedInUrl": "steve.linkedinprofile.com"
-				},
-				{
-            "name": "Meghan Mullally",
-            "jobTitle": "Student:Certification Program",
-            "Company": "UW",
-            "Experience": "2 years",
-            "School": "UW",
-            "Major": "MIS",
-            "Email": "ms.mullally27@gmail.com",
-						"LinkedInUrl": "meghanm.linkedinprofile.com"
-						// not my actual linkedin link 
-            }, 
-
-			]
-
-		})
-	</script>
-</head>
-
-<body>
-	<h1>Assignment 3</h1>
-	<section class="template-hook">
-		Fill this section with the templated components
-	</section>
-
-
-	<!-- Assignment 2 code  -->
-
-	<main class="main">
-		<div class="right">
+		const dataHTML = data.map(function(i)) {
+			let data = `<div class="right">
 			<img class="profile" src="img/unsplash-headshot.jpg" alt="Steve Smith's profile picture">
 			<div class="name">
 				<h2>Steve Smith</h2>
@@ -65,8 +29,44 @@
 			<p> <span class="bold">Email:</span> steve@fedc.com</p>
 			<img class="linkedin" src="img/linkedin.svg" alt="linkedin-logo">
 			<p>steve.linkedinprofile.com</p>
-		</div>
-	</main>
+		</div>`;
+
+		}
+
+
+	})
+	
+	
+	</script>
+</head>
+
+<body>
+	<h1>Assignment 3</h1>
+	<main class="main">
+<section class="template-hook"></section>
+		</main>
+
+
+	<!-- Assignment 2 code  -->
+
+	// <!-- <main class="main">
+	// 	<div class="right">
+	// 		<img class="profile" src="img/unsplash-headshot.jpg" alt="Steve Smith's profile picture">
+	// 		<div class="name">
+	// 			<h2>Steve Smith</h2>
+	// 			<h4>Project Manager</h4>
+	// 		</div>
+	// 	</div>
+	// 	<div class="info">
+	// 		<p><span class="bold">Company:</span> Front End Dev Co</p>
+	// 		<p><span class="bold">Experience:</span> 3 years</p>
+	// 		<p><span class="bold">School:</span> UW</p>
+	// 		<p><span class="bold">Major:</span> Marketing</p>
+	// 		<p> <span class="bold">Email:</span> steve@fedc.com</p>
+	// 		<img class="linkedin" src="img/linkedin.svg" alt="linkedin-logo">
+	// 		<p>steve.linkedinprofile.com</p>
+	// 	</div>
+	// </main> 
 
 
 
