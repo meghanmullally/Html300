@@ -8,10 +8,81 @@ html {
     box-sizing: inherit;
 }
 
+// css from assignment 2 
+
 .main {
-    padding: 2rem;
+    padding: 16px;
+    margin: 10px;
+    // position: relative;
+    background-color: $white;
+    border: 15px solid $gray;
+    display: flex;
+    overflow: hidden;
+    flex-wrap: wrap;
+    // align-items: stretch;
 }
 
-h1 {
-    color: $red;  
+
+.right {
+    .profile {
+        width: 50%;
+        height: auto;
+        // rounded circle img 
+        border-radius: 50%;
+        border: 8px solid $white;
+    }
+
+    .name {
+        display: block;
+        align-items: center;
+        overflow: hidden;
+        bottom: 0;
+        left: 100px;
+        padding: 5px;
+        margin: 5px;
+
+        & h2 {
+            color: $darkgray;
+            font-weight: bold;
+            line-height: 5%;
+            margin-left: 3.5rem;            
+        }
+
+        & h4 {
+            color: $darkgray;
+            font-style: italic;
+            line-height: 5%;
+            margin-left: 4rem;
+        }
+    }
+
+}
+
+.info {
+    display: block;
+    // display: flex;
+    // flex-wrap: wrap;
+    right: 200px;
+    top: 160px;
+    padding: 25px;
+    background-color: $gray;
+    width: 550px;
+    height: 300px;
+
+    & .linkedin {
+        float: left;
+        padding-right: 10px;
+        padding-bottom: 10px;
+        height: 35px;
+        width: 35px;
+    }
+
+    & .p {
+        float: right;
+        // display: inline-block;
+    }
+
+    & .bold {
+        font-weight: bold;
+    }
 }
